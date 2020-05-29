@@ -20,11 +20,7 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0"></script>
     <style>
-	p {
-	  text-align: center;
-	  font-size: 60px;
-	  margin-top: 0px;
-	}
+	
 </style>
 </head>
 <body id="page-top">
@@ -61,30 +57,53 @@
 
 
 <section class="page-section bg-light" id="test">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase"> BÀI TEST HSK 4 </h2>
-            <h3 class="section-subheading text-muted">Vì chỉ là bài Test bình thường kiểm tra năng lực nên mong các bạn
-                chỉ nghe 1 lần và hoàn thành nghiêm túc bài thi để kiểm tra đúng năng lực bản thân mình nhé!</h3>
-        </div>
-        <div class="row justify-content-center">
+    <div class="container-fluid">
+    	<div class="row justify-content-md-center">
+	        <div class="text-center">
+	            <h2 class="section-heading text-uppercase"> BÀI TEST HSK 4 </h2>
+	            <h3 class="section-subheading text-muted">Vì chỉ là bài Test bình thường kiểm tra năng lực nên mong các bạn
+	                chỉ nghe 1 lần và hoàn thành nghiêm túc bài thi để kiểm tra đúng năng lực bản thân mình nhé!</h3>
+	                
 
-            <div class="col col-md-2 ">
-                <audio controls>
-                    <source src="assets/sound/H41006.mp3"
-                            type="audio/mpeg">
+	        </div>
+        </div>
+        
+        <div class="row justify-content-md-center" style="background-color: #ffd54f;  box-sizing: border-box; margin: 0; padding: 10px;">
+        	<div class="col-lg-auto col-sm-auto col-md-auto col-auto">
+        	<h1 class="text-center">Bài thi kết thúc sau:</h1>
+			  <ul class="list-group list-group-horizontal align-items-center">
+			    <li style="display: inline-block;font-size: 1.5em;list-style-type: none;padding: 1em;text-transform: uppercase;">
+			    	<span id="hours" style=" display: block;font-size: 4.5rem;"></span>Hours</li>
+			    <li style="display: inline-block;font-size: 1.5em;list-style-type: none;padding: 1em;text-transform: uppercase;">
+			    	<span id="minutes" style=" display: block;font-size: 4.5rem;"></span>Minutes</li>
+			    <li style="display: inline-block;font-size: 1.5em;list-style-type: none;padding: 1em;text-transform: uppercase;">
+			    	<span id="seconds" style=" display: block;font-size: 4.5rem;"></span>Seconds</li>
+			  </ul>
+			</div>
+        </div>
+        
+        <div class="row justify-content-center text-center">
+
+            <div class="col-lg-auto col-sm-auto col-md-auto col-auto">
+            	<h3 style="padding-top: 2em: ">File nghe:</h3>
+        	<br>
+                <audio preload="auto" controls>
+                    <source src="assets/sound/H41006.mp3">
                 </audio>
             </div>
         </div>
-        <div class="row">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe0CjeriH-ZwIqvIJn2dw0Lr_qPyx35SkbGxI_7LvOf7PHr4g/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Đang tải…</iframe>
+
+        <div class="row justify-content-md-center">
+        	
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe0CjeriH-ZwIqvIJn2dw0Lr_qPyx35SkbGxI_7LvOf7PHr4g/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Đang tải…</iframe>
+            
         </div>
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
                 <p class="large text-muted">Chúc các bạn ngày càng tiến bộ trong quá trình học tiếng Trung. Nếu có điều gì
                     chưa hài lòng về bài Test thì liên hệ bọn mình ngay nhé</p>
                 <br>
-                <p id="demo"></p>
+               
             </div>
         </div>
 
@@ -103,10 +122,7 @@
                     <i class="fab fa-instagram"></i></a>
 
             </div>
-           <!-- <div class="col-lg-4 text-lg-right">
-                <a class="mr-3" href="#!">Privacy Policy</a><a href="#!">Terms
-                of Use</a>
-            </div>-->
+           
         </div>
     </div>
 </footer>
@@ -124,34 +140,29 @@
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
 <script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+var second = 1,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+var countDown = new Date().getTime(),
+    x = setInterval(function() {    
 
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
+      var now = new Date().getTime(),
+          distance = (countDown + 6600000 - now) / 1000;
+
+      
+        document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+        document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+        document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+
+      //do something later when date is reached
+      //if (distance < 0) {
+      //  clearInterval(x);
+      //  'IT'S MY BIRTHDAY!;
+      //}
+
+    }, second)
 </script>
 </body>
 </html>
